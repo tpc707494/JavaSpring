@@ -16,8 +16,6 @@ public class LoginControl {
     public ResultUtil Login(){
         ResultUtil resultUtil = new ResultUtil();
         resultUtil.setDatas(new ArrayList<>());
-//        ModelAndView modelAndView = new ModelAndView();/
-//        modelAndView.setViewName("index");
         return resultUtil;
     }
 }
