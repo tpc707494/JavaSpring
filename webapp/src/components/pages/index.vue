@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import http from '@/util/http'
+// import http from '@/util/http'
 export default {
   name: 'HelloWorld',
   data () {
@@ -14,10 +14,10 @@ export default {
     }
   },
   created () {
-    http({
-      method: 'get',
-      url: `login`
-    })
+    // http({
+    //   method: 'get',
+    //   url: `login`
+    // })
     // // 创建axios实例
     // const service = axios.create({
     //   baseURL: process.env.BASE_API, // api的base_url
