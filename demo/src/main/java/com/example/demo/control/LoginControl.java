@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @RestController
 //@EnableAutoConfiguration
-public class LoginControl {
+public class LoginControl extends BaseControl{
     @ResponseBody
     @RequestMapping("login")
     public ResultUtil Login(){
