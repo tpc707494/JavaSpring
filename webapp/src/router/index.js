@@ -27,6 +27,8 @@ Vue.use(VueRouter)
 
 // 导出路由 在 main.js 里使用
 const router = new VueRouter({
+  mode: 'history',
+  scrollBehavior: () => ({y: 0}),
   routes
 })
 
@@ -47,11 +49,12 @@ router.beforeEach((to, from, next) => {
       util.cookies.set('redirect', to.fullPath)
       // 没有登录的时候跳转到登录界面
       next({
-        name: 'login'
+        name: '404'
       })
     }
   } else {
-    util.cookies.get('token')
+    const token = util.cookies.get('token')
+    console.log(token)
     // 不需要身份校验 直接通过
     next()
   }
@@ -59,5 +62,6 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to) => {
   // 进度条
   NProgress.done()
+  util.title(to.meta.title)
 })
 export default router

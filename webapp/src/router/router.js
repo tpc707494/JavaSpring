@@ -1,16 +1,21 @@
 // import mobile from './model/mobile/index'
 // import pc from './model/pc/index'
 import pagesindex from '@/components/pages/index'
-// const meta = { requiresAuth: true }
+const meta = { requiresAuth: true }
 
 const frameIn = [
   {
     path: '/',
     name: 'pagesindex',
-    component: pagesindex
-    // meta
-  }
-  // },
+    component: pagesindex,
+    meta: {meta, title: '首页'}
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/components/pages/common/error-page-404'),
+    meta: {title: '404'}
+  } // ,
   // mobile,
   // pc
 ]

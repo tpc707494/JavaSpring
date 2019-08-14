@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie'
 import WebStorageCache from 'web-storage-cache'
-import log from './util.log.js'
-import { version } from '../package'
+import { version } from '../../../package'
 
 const cookies = {}
 const runElectron = process.env.VUE_APP_IS_ELECTRON
@@ -44,7 +43,6 @@ cookies.set = function (name = 'default', value = '', cookieSetting = {}) {
  * @param {String} name cookie name
  */
 cookies.get = function (name = 'default') {
-  log.success(process.env.BASE_API)
   if (runElectron) {
     return wsCache.get(`tpc-${version}-${name}`)
   } else {
