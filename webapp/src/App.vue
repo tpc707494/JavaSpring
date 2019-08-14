@@ -9,6 +9,7 @@
 export default {
   name: 'App',
   mounted () {
+    console.log(navigator.userAgent)
     if (!this._isMobile) {
       this.$router.replace('/pagesindex')
     } else {
