@@ -11,6 +11,7 @@ let util = {
  * @param {String} title 标题
  */
 util.title = function (titleText) {
+  log.capsule('标题：', process.env.VUE_APP_TITLE, 'success')
   const processTitle = process.env.VUE_APP_TITLE || 'tpc'
   window.document.title = `${processTitle}${titleText ? ` | ${titleText}` : ''}`
 }
