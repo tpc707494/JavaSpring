@@ -11,11 +11,11 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(config => {
-  // console.log('request', config)
+  console.log('request', config)
   return config
 })
 service.interceptors.response.use(config => {
-  // console.log('response', config)
+  console.log('response', config)
 })
 
 export default service

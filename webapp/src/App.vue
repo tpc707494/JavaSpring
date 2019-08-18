@@ -10,11 +10,11 @@ export default {
   name: 'App',
   mounted () {
     console.log(navigator.userAgent)
-    if (!this._isMobile) {
-      this.$router.replace('/pagesindex')
-    } else {
-      this.$router.replace('/404')
-    }
+    // if (!this._isMobile) {
+    //   this.$router.replace('/pagesindex')
+    // } else {
+    //   this.$router.replace('/404')
+    // }
   },
   methods: {
     _isMobile () {

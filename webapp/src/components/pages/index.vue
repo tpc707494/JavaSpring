@@ -5,7 +5,7 @@
 </template>
 
 <script>
-// import http from '@/util/http'
+import http from '@/util/http'
 export default {
   name: 'HelloWorld',
   data () {
@@ -14,28 +14,16 @@ export default {
     }
   },
   created () {
-    // http({
-    //   method: 'get',
-    //   url: `login`
-    // })
-    // // 创建axios实例
-    // const service = axios.create({
-    //   baseURL: process.env.BASE_API, // api的base_url
-    //   timeout: 600000, // 请求超时时间
-    //   paramsSerializer: params => {
-    //     // return qs.stringify(params, { indices: false })
-    //   }
-    // })
-    // // service.interceptors.request.use(config => {
-    // //   console.log(config)
-    // // })
-    // service.interceptors.response.use(response => {
-    //   console.log(response)
-    // })
-    // service({
-    //   method: 'get',
-    //   url: `login`
-    // })
+    this.fapi({password: '123456'})
+  },
+  methods: {
+    fapi (params) {
+      http({
+        method: 'get',
+        url: `login`,
+        params
+      })
+    }
   }
 }
 </script>
